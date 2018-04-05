@@ -1,0 +1,64 @@
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+body .content {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%; }
+  body .content .left {
+    float: left;
+    width: 30%;
+    padding: 3%;
+    height: 100%;
+    border-right: solid 1px;
+    border-image: -webkit-linear-gradient(#aaa, white) 30 30;
+    border-image: -moz-linear-gradient(#aaa, white) 30 30;
+    border-image: linear-gradient(#aaa, white) 30 30;
+    margin-top: 3%; }
+    body .content .left .meImg {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%; }
+    body .content .left .navList {
+      list-style: none; }
+    body .content .left .name {
+      font-size: 20px;
+      color: #222;
+      font-weight: 500;
+      line-height: 50px; }
+    body .content .left .intro {
+      color: #888;
+      font-size: 15px;
+      margin: 10px 0; }
+    body .content .left .navList {
+      margin-top: 30px; }
+      body .content .left .navList li {
+        margin: 10px 0; }
+        body .content .left .navList li a {
+          color: #222;
+          font-size: 15px; }
+        body .content .left .navList li:hover a {
+          color: #5d93ff; }
+        body .content .left .navList li.active a {
+          color: #5d93ff; }
+  body .content .right {
+    float: right;
+    width: 63%;
+    margin-top: 3%; }
+body .other {
+  margin: 0 20px 50px 20px; }
+  body .other .img {
+    width: 100%;
+    margin: 20px 0; }
+
+@media screen and (max-width: 700px) {
+  body .content .left {
+    width: 100%; }
+  body .content .right {
+    width: 100%; } }
+
+/*# sourceMappingURL=nav.css.map */

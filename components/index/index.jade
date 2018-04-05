@@ -1,0 +1,12 @@
+mixin doc(obj)
+    li
+        .top
+            .time #{obj.time}
+            .auth 羊锡贵
+        .content
+            h2(onclick="location.href='/docs/#{obj.filename}'").title #{obj.originalname}
+            .text #{obj.intro}
+        a(href="/docs/#{obj.filename}").read 阅读
+ul.docList
+    for list in docArr
+        +doc(list)

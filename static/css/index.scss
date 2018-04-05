@@ -1,0 +1,28 @@
+.docList{
+  color: #222222;
+  li{
+    margin: 3% 3% 8% 3%;
+    .time{
+      font-size: 15px;
+      display: inline-block;
+    }
+    .auth{
+      font-size: 15px;
+      color: #f7a046;
+      display: inline-block;
+      margin: 0 20px;
+    }
+    .title{
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .text{
+      font-size: 15px;
+      margin: 20px 0;
+    }
+    .read{
+      color: #5d93ff;
+      font-size: 12px;
+    }
+  }
+}

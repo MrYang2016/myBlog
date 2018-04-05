@@ -1,0 +1,23 @@
+.docList {
+  color: #222222; }
+  .docList li {
+    margin: 3% 3% 8% 3%; }
+    .docList li .time {
+      font-size: 15px;
+      display: inline-block; }
+    .docList li .auth {
+      font-size: 15px;
+      color: #f7a046;
+      display: inline-block;
+      margin: 0 20px; }
+    .docList li .title {
+      font-size: 20px;
+      cursor: pointer; }
+    .docList li .text {
+      font-size: 15px;
+      margin: 20px 0; }
+    .docList li .read {
+      color: #5d93ff;
+      font-size: 12px; }
+
+/*# sourceMappingURL=index.css.map */

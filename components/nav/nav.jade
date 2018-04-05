@@ -1,0 +1,14 @@
+mixin listFun(obj,index)
+    li(class="#{type === index ? 'active' : ''}"): a(href='#{obj.url}') #{obj.title}
+
+- var listArr = [{title:'文章',url:'/'},{title:'关于我',url:'/about'},{title:'联系我',url:'/contact'}]
+
+.content.clearfix
+    .left
+        img.meImg(src='/img/me.jpeg')
+        .name 羊锡贵
+        .intro 竭尽全力做好自己应该做和喜欢做的事情，但愿一切能如愿而行。
+        ul.navList
+            for list,i in listArr
+                +listFun(list,i)
+    .right !{content}
