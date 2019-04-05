@@ -1,0 +1,14 @@
+a(href="/") 首页
+a(href='/about', style="float:right;") by 羊锡贵
+span.visitor(style="float:right;margin-right:20px;") 访问人数：#{visitorNum}
+
+
+div.content !{content}
+
+div.otherDoc
+  if nextDoc !== undefined
+    div.nextDoc.other 
+      a(href="/docs/#{nextDoc.hashName}") 上一篇&nbsp;&nbsp; #{nextDoc.fileName}
+  if prevDoc !== undefined
+    div.prevDoc.other
+      a(href="/docs/#{prevDoc.hashName}") #{prevDoc.fileName} &nbsp;&nbsp;下一篇

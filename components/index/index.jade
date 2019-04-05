@@ -4,9 +4,8 @@ mixin doc(obj)
             .time #{obj.time}
             .auth 羊锡贵
         .content
-            h2(onclick="location.href='/docs/#{obj.filename}'").title #{obj.originalname}
+            h2(onclick="location.href='/docs/#{obj.hashName}'").title #{obj.fileName}
             .text #{obj.intro}
-        a(href="/docs/#{obj.filename}").read 阅读
 ul.docList
     for list in docArr
         +doc(list)

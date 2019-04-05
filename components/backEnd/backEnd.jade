@@ -1,4 +1,6 @@
-form(action='/api/getFile', method='post', enctype="multipart/form-data")
-    input(type='file', name='doc')
-    input(type='text', name='intro')
-    input(type='submit', value='提交')
+input(type="text",placeholder='文档名称',id='fileName')
+input(type="text",placeholder='文档简介',id='fileIntro')
+textarea(name="content", cols="30", rows="10", id="textEdit")
+button(id='submitBtn') 提交
+
+#showDiv
