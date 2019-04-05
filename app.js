@@ -17,17 +17,6 @@ mongoose.connection.on('error', console.log.bind(console, 'connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/test/study', (req,res) => {
-  function getFormTime(time, isGetHour = false) {
-    const t = new Date(time);
-    const addZero = s => String(s).length === 1 ? `0${s}` : s;
-    let result = `${t.getFullYear()}-${addZero(t.getMonth() + 1)}-${addZero(t.getDate())}`;
-    if (isGetHour) result += ` ${addZero(t.getHours())}:${addZero(t.getMinutes())}:${addZero(t.getSeconds())}`;
-    return result;
-  }
-  res.json(getFormTime('2019-04-06 23:59:59'));
-});
-
 app.use(pageRouter);
 app.use(backendApi);
 app.use('/', express.static(path.join(__dirname + '/static')));
