@@ -4,9 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// const heapdump = require('heapdump');
-// heapdump.writeSnapshot(path.resolve(__dirname + '/log/data' + Date.now() + '.heapsnapshot'));
-
 const pageRouter = require('./pageRouter');
 const backendApi = require('./interface/backend');
 
@@ -20,11 +17,21 @@ mongoose.connection.on('error', console.log.bind(console, 'connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/test/study', (req,res) => {
+  function getFormTime(time, isGetHour = false) {
+    const t = new Date(time);
+    const addZero = s => String(s).length === 1 ? `0${s}` : s;
+    let result = `${t.getFullYear()}-${addZero(t.getMonth() + 1)}-${addZero(t.getDate())}`;
+    if (isGetHour) result += ` ${addZero(t.getHours())}:${addZero(t.getMinutes())}:${addZero(t.getSeconds())}`;
+    return result;
+  }
+  res.json(getFormTime('2018-12-3'));
+});
+
 app.use(pageRouter);
 app.use(backendApi);
 app.use('/', express.static(path.join(__dirname + '/static')));
-app.set('port', 8100);
-app.listen(process.env.PORT || app.get('port'), err => {
+app.listen(process.env.PORT || 8100, err => {
   if (err) throw err;
-  console.log('server connect in http://localhost:' + app.get('port'));
+  console.log('server connect in http://localhost:' + process.env.PORT || 8100);
 });

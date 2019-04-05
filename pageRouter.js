@@ -9,10 +9,9 @@ const DocHtml = require('./components/doc/doc');
 
 const Doc = require('./schema/doc');
 
-router.get('/', (req, res) => {
-  Index().then(text => {
-    res.send(text);
-  });
+router.get('/', async (req, res) => {
+  const text = await Index();
+  res.send(text);
 });
 router.get('/about', (req, res) => {
   res.send(About());
@@ -37,11 +36,11 @@ router.get('/docs/*', async (req, res) => {
     ips.push(ip);
     await Doc.findOneAndUpdate({ hashName: docName }, { ips: ips });
   }
-  const html = DocHtml({ 
-    fileName, 
-    content, 
-    prevDoc, 
-    nextDoc, 
+  const html = DocHtml({
+    fileName,
+    content,
+    prevDoc,
+    nextDoc,
     visitorNum: ips.length,
   });
   res.send(html);
