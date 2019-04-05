@@ -10,10 +10,13 @@
 
 <body>
   <div id="testDiv"></div>
+  --------log---------
+  <div id='log'></div>
   <script>
     function getFormTime(time, isGetHour = false) {
       const t = new Date(time);
       const addZero = s => String(s).length === 1 ? `0${s}` : s;
+      document.querySelector('#log').innerHTML = `t:${t},addZero:${t.getFullYear()},string:${String(t.getFullYear())}`;
       let result = `${t.getFullYear()}-${addZero(t.getMonth() + 1)}-${addZero(t.getDate())}`;
       if (isGetHour) result += ` ${addZero(t.getHours())}:${addZero(t.getMinutes())}:${addZero(t.getSeconds())}`;
       return result;
