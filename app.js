@@ -25,7 +25,7 @@ app.get('/test/study', (req,res) => {
     if (isGetHour) result += ` ${addZero(t.getHours())}:${addZero(t.getMinutes())}:${addZero(t.getSeconds())}`;
     return result;
   }
-  res.json(getFormTime('2018-12-3'));
+  res.json(getFormTime('2019-04-06 23:59:59'));
 });
 
 app.use(pageRouter);
