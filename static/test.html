@@ -14,7 +14,7 @@
   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
   <script>
     (function () {
-      $(document).on('click', '.detailBtn', function () {
+      $('#studyPlanList').on('click', '.detailBtn', function () {
         const planId = $(this).attr('data-planId');
         alert(planId);
       });
