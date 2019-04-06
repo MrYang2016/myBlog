@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/study-plan.min.css">
+</head>
+
+<body>
+  <div id="testDiv"></div>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script>
+    (function () {
+      $(document).on('click', '.detailBtn', function () {
+        const planId = $(this).attr('data-planId');
+        alert(planId);
+      });
+      const html = `<ul class="study-plan-list clearfix" id="studyPlanList" style="">
+          <li style="">
+            <div class="study-plan-list__title">牛逼学习计划4</div>
+            <div class="study-plan-list__time">
+              <span class="study-plan-list__time__residue" style="display: inline-block;">剩余1天</span>
+              <span class="study-plan-list__time__end">截止时间：2019-04-06</span>
+              <span class="study-plan-list__time__undone" style="display: none;">未完成</span>
+            </div>
+            <div class="study-plan-list__progress"><div class="study-plan-list__progress__active" style="width:0%;"></div></div>
+            <div class="study-plan-list__completed">已完成<span>0</span>%</div>
+            <div class="study-plan-list__tostudy study-plan-list__tostudy detailBtn" data-planid="55acf25f">进入学习</div>
+          </li>
+        </ul>`;
+      document.querySelector('#testDiv').innerHTML = html;
+    })();
+  </script>
+</body>
+
+</html>
