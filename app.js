@@ -19,7 +19,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(pageRouter);
 app.use(backendApi);
+// 静态资源
 app.use('/', express.static(path.join(__dirname + '/static')));
+// 管理后台
+// app.use('/backend', express.static(path.join(__dirname + '/backend/dist')));
+// demo
+app.use('/demo', express.static(path.join(__dirname + '/demo')));
 app.listen(process.env.PORT || 8100, err => {
   if (err) throw err;
   console.log('server connect in http://localhost:' + process.env.PORT || 8100);
