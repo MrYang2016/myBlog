@@ -15,7 +15,8 @@
     "fs": "^0.0.1-security",
     "jade": "^1.11.0",
     "js-md5": "^0.7.3",
-    "mongoose": "^5.3.11"
+    "mongoose": "^5.3.11",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "supervisor": "^0.12.0"

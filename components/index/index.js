@@ -15,7 +15,6 @@ module.exports = () => {
       content: text({ docArr: d }),
       style: ['/css/index.css'],
       type: 0,
-      jsArr: ['/js/test.js']
     });
   });
 };

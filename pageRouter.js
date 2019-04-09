@@ -32,7 +32,6 @@ router.get('/docs/*', async (req, res) => {
     Doc.find({ time: { $gt: time } }).limit(1).sort({ time: 1 }),
   ]);
   const ip = getIP(req);
-  console.log(ips);
   if (ips.indexOf(ip) === -1) {
     ips.push(ip);
     await Doc.findOneAndUpdate({ hashName: docName }, { ips: ips });
