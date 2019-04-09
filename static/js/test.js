@@ -34,7 +34,14 @@
 //   }
 // })(this);
 
-window.addEventListener('load', function() { setTimeout(hideURLbar, 0); }, false); 
-function hideURLbar(){ 
-  window.scrollTo(0,1); 
-} 
+// window.addEventListener('load', function() { setTimeout(hideURLbar, 0); }, false); 
+// function hideURLbar(){ 
+//   window.scrollTo(0,1); 
+// } 
+
+window.addEventListener('load', function () {
+  var content = document.querySelector('.content');
+  content.setAttribute('style', 'height:' + window.innerHeight + 100 + 'px;');
+  window.scrollTo(0, 1);
+  content.setAttribute('style', 'height:' + window.innerHeight + 'px;');
+});
