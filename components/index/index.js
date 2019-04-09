@@ -14,7 +14,8 @@ module.exports = () => {
       title: '羊锡贵的博客',
       content: text({ docArr: d }),
       style: ['/css/index.css'],
-      type: 0
+      type: 0,
+      jsArr: ['/js/test.js']
     });
   });
 };
