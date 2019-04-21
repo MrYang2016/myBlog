@@ -8,4 +8,5 @@ module.exports = mongoose.model('doc', new Schema({
   intro: String,
   content: String,
   ips: { type: Array, default: [] },
+  markdown: { type: String, default: '' },
 }));

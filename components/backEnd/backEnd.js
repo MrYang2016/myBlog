@@ -6,7 +6,7 @@ module.exports = () => {
   return Head({
     title: '后台',
     headContent: text(),
-    jsArr: ['/js/showdown.min.js', '/js/backEnd.js'],
+    jsArr: ['/js/showdown.min.js','/js/showdown-table.min.js', '/js/backEnd.js'],
     myStyle: ['/css/markdown.css']
   });
 };

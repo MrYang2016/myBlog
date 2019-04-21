@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export NODE_ENV='development' PORT=8100 && node app.js"
+    "start": "export NODE_ENV='development' PORT=8100 && supervisor app.js"
   },
   "author": "yang",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.4",
     "express": "^4.16.2",
     "fs": "^0.0.1-security",
     "jade": "^1.11.0",

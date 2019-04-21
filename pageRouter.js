@@ -3,7 +3,7 @@ const router = express.Router();
 
 const About = require('./components/about/about');
 const Contact = require('./components/contact/contact');
-const BackEnd = require('./components/backEnd/backEnd');
+// const BackEnd = require('./components/backEnd/backEnd');
 const Index = require('./components/index/index');
 const DocHtml = require('./components/doc/doc');
 
@@ -19,9 +19,9 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
   res.send(Contact());
 });
-router.get('/backend', (req, res) => {
-  res.send(BackEnd());
-});
+// router.get('/backend', (req, res) => {
+//   res.send(BackEnd());
+// });
 router.get('/docs/*', async (req, res) => {
   let docName = req.params[0];
   const result = await Doc.find({ hashName: docName });

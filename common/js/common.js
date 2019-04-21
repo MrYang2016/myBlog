@@ -10,6 +10,8 @@ const portResult = {
   }
 };
 
+const isObject = obj => obj !== null && obj instanceof Object;
+
 module.exports = {
   getDate: time => {
     let addZero = d => {
@@ -22,14 +24,18 @@ module.exports = {
     return `${d.getFullYear()}-${addZero(d.getMonth() + 1)}-${addZero(d.getDate())}`;
   },
 
-  checkDataType(obj, arr) {
+  checkDataType(obj, option) {
     if (!(typeof obj === 'object')) throw '第一个参数必须为对象';
-    if (!(arr instanceof Array)) throw '第二个参数必须为数组';
-    for (let i = 0, len = arr.length; i < len; i++) {
-      if (!(arr[i] instanceof Array)) throw '第二个参数必须为二维数组';
-      const [key, type] = arr[i];
+    if (!isObject(option)) throw '第二个参数必须为对象';
+
+    for (const key in option) {
+      const v = option[key];
+      const { type, required = true } = isObject(v) ? v : { type: v };
       const val = obj[key];
-      if (val === undefined) return portResult.fail(`缺少参数${key}`);
+      if (val === undefined) {
+        if (!required) continue;
+        return portResult.fail(`缺少参数${key}`);
+      }
       if (!isType(val, type)) return portResult.fail(`参数${key}类型必须为${type}`);
     }
     return { status: 'success' };
@@ -44,7 +50,7 @@ module.exports = {
         return val === 'true' || val === 'false';
       } else {
         if (t === 'number') {
-          val = parseFloat(val);
+          val = Number(val);
           if (isNaN(val)) return false;
         }
         return typeof val === t;

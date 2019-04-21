@@ -1,7 +1,7 @@
 window.onload = function () {
   var textEdit = document.querySelector('#textEdit');
   var showDiv = document.querySelector('#showDiv');
-  var converter = new showdown.Converter();
+  var converter = new showdown.Converter({ extensions: ['table'] });
   addHandler(textEdit, 'input', function (e) {
     var text = e.target.value;
     var html = converter.makeHtml(text);
