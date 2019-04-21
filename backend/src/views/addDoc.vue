@@ -81,7 +81,7 @@ export default {
       const { status, msg } = checkDataType(this, {
         fileName: "string",
         fileIntro: "string",
-        html: "string"
+        docHtml: "string"
       });
       if (!status) return this.$message(msg);
       const requestData = {
